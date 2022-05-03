@@ -3,10 +3,10 @@ import {Link} from 'react-scroll'
 
 const Banner: React.FC = (): ReactElement => {
     return (
-        <section className="section-banner-container">
+        <section className="banner-section-container">
             <div className="div-banner-container">
                 <div className="div-banner-text-container">
-                    <h1 className="section-title">
+                    <h1 className="banner-section-title">
                         Wassim Dahmane
                         <span className="sm:block">
                           Développeur full-stack

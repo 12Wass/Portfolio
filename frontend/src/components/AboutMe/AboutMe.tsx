@@ -4,8 +4,8 @@ import {Element} from "react-scroll";
 const AboutMe: React.FC = (): ReactElement => {
     return (
         <Element name="who-am-i">
-            <div className="max-w-5xl px-4 py-8 mx-auto lg:h-screen">
-                <section className="p-8 bg-gray-100 rounded-lg">
+            <div className="max-w-5xl px-4 mx-auto lg:h-max">
+                <section className="p-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg">
                     <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center">
                         <div className="relative">
                             <div className="aspect-w-1 aspect-h-1">
@@ -17,9 +17,9 @@ const AboutMe: React.FC = (): ReactElement => {
                             </div>
 
                             <div
-                                className="absolute inline-flex px-4 py-2 bg-white rounded-lg shadow-xl -bottom-4 -right-4"
+                                className="absolute inline-flex px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg shadow-xl -bottom-4 -right-4"
                             >
-                                <span className="inline-block bg-gray-100 rounded-lg">
+                                <span className="inline-block bg-transparent rounded-lg">
                                     <p className="ml-2 mr-2">
                                         Voir mon CV
                                     </p>
@@ -29,7 +29,7 @@ const AboutMe: React.FC = (): ReactElement => {
 
                         <blockquote className="sm:col-span-2">
                             <p className="text-xl font-medium sm:text-2xl">
-                                Passionné et très curieux. J'essaie d'atteindre les limite de stockage de mon cerveau
+                                Passionné et très curieux. J'essaie d'atteindre les limites de stockage de mon cerveau
                                 pour
                                 voir.
                             </p>
@@ -43,8 +43,9 @@ const AboutMe: React.FC = (): ReactElement => {
                         </blockquote>
                     </div>
                 </section>
-                <div className="pt-5 text-white">
-                    <h1>Mes compétences</h1>
+
+                <div className="py-4">
+                    <div className="w-full border-t border-gray-300" />
                 </div>
             </div>
         </Element>
