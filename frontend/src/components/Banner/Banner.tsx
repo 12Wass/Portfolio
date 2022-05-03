@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
+import {Link} from 'react-scroll'
 
-const Banner = () => {
+const Banner: React.FC = (): ReactElement => {
     return (
         <section className="section-banner-container">
             <div className="div-banner-container">
@@ -13,14 +14,16 @@ const Banner = () => {
                     </h1>
 
                     <p className="banner-introduction-text">
-                        Je sais pas encore quoi écrire, laissez moi un peu de temps histoire d'improviser un truc propre et attrayant
+                        Je sais pas encore quoi écrire, laissez moi un peu de temps histoire d'improviser un truc propre
+                        et attrayant
                     </p>
 
                     <div className="div-banner-button-container">
-                        <a className="banner-bouncing-button"
-                           href="/discover-me">
-                            Découvrez-moi !
-                        </a>
+                        <Link to={'who-am-i'} smooth={true} duration={1000} activeClass="active">
+                            <button className="banner-bouncing-button">
+                                Découvrez-moi !
+                            </button>
+                        </Link>
 
                         <a className="banner-button"
                            href="/contact">
