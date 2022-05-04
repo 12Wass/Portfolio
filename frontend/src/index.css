@@ -8,36 +8,34 @@
     @apply bg-gray-900;
   }
   /* Banner component */
-  .banner-section-container {
-    @apply text-white;
-  }
-
   .banner-section-title {
     @apply text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600;
   }
-
   .div-banner-container {
     @apply max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex;
   }
-
   .div-banner-text-container {
     @apply max-w-3xl mx-auto text-center;
   }
-
   .banner-introduction-text {
     @apply max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl;
   }
-
   .div-banner-button-container {
     @apply flex flex-wrap justify-center gap-4 mt-8;
   }
-
   .banner-bouncing-button {
     @apply animate-bounce block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring;
   }
-
   .banner-button {
     @apply block w-full px-12 py-3 text-sm font-medium text-white border border-blue-600 rounded sm:w-auto hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring;
+  }
+
+  /* Skills & School components */
+  .skills-div-container {
+    @apply max-w-screen-xl px-4 py-20 mx-auto sm:px-6 lg:px-8;
+  }
+  .skills-card-grid {
+    @apply grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3;
   }
 
 }

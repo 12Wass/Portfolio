@@ -1,5 +1,6 @@
 import React, {ReactElement} from 'react';
 import {Element} from "react-scroll";
+import Separator from "../Separator/Separator";
 
 const AboutMe: React.FC = (): ReactElement => {
     return (
@@ -44,9 +45,7 @@ const AboutMe: React.FC = (): ReactElement => {
                     </div>
                 </section>
 
-                <div className="py-4">
-                    <div className="w-full border-t border-gray-300" />
-                </div>
+                <Separator/>
             </div>
         </Element>
     )

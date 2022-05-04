@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import Separator from "../Separator/Separator";
 
 interface Props {
     skills: {
@@ -7,13 +8,12 @@ interface Props {
     }[];
 }
 
-
 const Skills: React.FC<Props> = (skills: Props): ReactElement => {
     return (
         <section className="text-white bg-gray-900">
-            <div className="max-w-screen-xl px-4 pb-36 mx-auto sm:px-6 lg:px-8">
+            <div className="skills-div-container">
                 <div className="max-w-lg mx-auto text-center">
-                    <h2 className="text-3xl font-bold sm:text-4xl">Mes expériences</h2>
+                    <h2 className="text-3xl font-bold sm:text-4xl">Expérience professionnelle</h2>
 
                     <p className="mt-4 text-gray-300">
                         A travers mes différentes expériences professionnelles et mes projets personnels et scolaires,
@@ -22,8 +22,7 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                 </div>
 
 
-                <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-
+                <div className="skills-card-grid">
                     {skills.skills.map(skill => {
                         return (
                             <a
@@ -31,7 +30,7 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                                 href="/modal/enterprise"
                                 key={skill.enterprise}
                             >
-                            <div className="w-10 h-10 text-blue-500 flex">
+                            <div className="w-10 h-10 text-blue-500">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"

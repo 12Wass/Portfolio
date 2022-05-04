@@ -3,7 +3,7 @@ import {Link} from 'react-scroll'
 
 const Banner: React.FC = (): ReactElement => {
     return (
-        <section className="banner-section-container">
+        <section className="text-white">
             <div className="div-banner-container">
                 <div className="div-banner-text-container">
                     <h1 className="banner-section-title">
