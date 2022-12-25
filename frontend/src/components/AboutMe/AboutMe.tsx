@@ -1,6 +1,8 @@
 import React, {ReactElement} from 'react';
 import {Element} from "react-scroll";
 import Separator from "../Separator/Separator";
+import { motion } from "framer-motion";
+import "./AboutMe.css";
 
 const AboutMe: React.FC = (): ReactElement => {
     return (
@@ -11,7 +13,7 @@ const AboutMe: React.FC = (): ReactElement => {
                         <div className="relative">
                             <div className="aspect-w-1 aspect-h-1">
                                 <img
-                                    src="https://media-exp1.licdn.com/dms/image/C4D03AQHQQ7ZKm4cSNw/profile-displayphoto-shrink_800_800/0/1602625687632?e=1657152000&v=beta&t=Mh9-cwaoJYDh2zlO6lFtBzRrfX6oRy9GSKF4KzwUSc4"
+                                    src="https://media.licdn.com/dms/image/C4D03AQHQQ7ZKm4cSNw/profile-displayphoto-shrink_800_800/0/1602625687632?e=1676505600&v=beta&t=GX9f0V-iYxM5gTy5hWnTZzYR55pDtPCqZGtQkCEqq28"
                                     alt=""
                                     className="object-cover rounded-lg"
                                 />

@@ -15,15 +15,18 @@ function App() {
                 skills={[
                     {
                         enterprise: "DGAC - SNA-RP",
-                        description: "Développement d'une application critique permettant de gérer le cycle de travail des contrôleurs aériens de toute la France et des Outre-mers"
+                        description: "Développement d'une application critique permettant de gérer le cycle de travail des contrôleurs aériens de toute la France et des Outre-mers",
+                        modalDetails: "Modal details"
                     },
                     {
                         enterprise: "Finelia",
-                        description: "Développement d'une application de Trade Finance permettant aux entreprises de gérer leurs transactions financières via SWIFT"
+                        description: "Développement d'une application de Trade Finance permettant aux entreprises de gérer leurs transactions financières via SWIFT",
+                        modalDetails: "Modal details"
                     },
                     {
                         enterprise: "Teksial",
-                        description: "Participation au développement de plusieurs applications internes de gestion de client et de front-office"
+                        description: "Participation au développement de plusieurs applications internes de gestion de client et de front-office",
+                        modalDetails: "Modal details"
                     }
                 ]}
             />

@@ -14,8 +14,7 @@ const Banner: React.FC = (): ReactElement => {
                     </h1>
 
                     <p className="banner-introduction-text">
-                        Je sais pas encore quoi écrire, laissez moi un peu de temps histoire d'improviser un truc propre
-                        et attrayant
+                        Je sais pas trop quoi écrire, mais imaginez un truc attrayant qui vous fais croire que je suis compétent !
                     </p>
 
                     <div className="div-banner-button-container">

@@ -1,15 +1,30 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useState} from 'react';
+import Modal from "../Modal/Modal";
+
 
 interface Props {
     skills: {
         enterprise: string,
-        description: string
+        description: string,
+        modalDetails: string, // CHANGE THIS TO JSON OBJECT (IMAGES AND ALL OF THAT)
     }[];
 }
 
 const Skills: React.FC<Props> = (skills: Props): ReactElement => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalData, setModalData] = useState();
+
+    const toggleModal = (data: any) => {
+        setModalData(data);
+        if (isModalOpen === false) {
+            setIsModalOpen(!isModalOpen);
+        }
+    }
+
+
     return (
-        <section className="text-white bg-gray-900">
+        <section className="text-white bg-gray-900 relative">
             <div className="skills-div-container">
                 <div className="max-w-lg mx-auto text-center">
                     <h2 className="text-3xl font-bold sm:text-4xl">Expérience professionnelle</h2>
@@ -20,13 +35,14 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                     </p>
                 </div>
 
+                <Modal canShow={isModalOpen} updateModalState={toggleModal} data={modalData} />
 
                 <div className="skills-card-grid">
                     {skills.skills.map(skill => {
                         return (
-                            <a
+                            <button
                                 className="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-blue-500/10"
-                                href="/modal/enterprise"
+                                onClick={() => toggleModal(skill.description)}
                                 key={skill.enterprise}
                             >
                             <div className="w-10 h-10 text-blue-500">
@@ -54,7 +70,7 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                                 <p className="mt-1 text-sm text-gray-300">
                                     {skill.description}
                                 </p>
-                            </a>
+                            </button>
                         )
                     })}
                 </div>
