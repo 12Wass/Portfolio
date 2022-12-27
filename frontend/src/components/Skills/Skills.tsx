@@ -1,5 +1,5 @@
-import React, {ReactElement, useState} from 'react';
-import Modal from "../Modal/Modal";
+import React, {ReactElement} from 'react';
+// import Modal from "../Modal/Modal";
 
 
 interface Props {
@@ -12,15 +12,15 @@ interface Props {
 
 const Skills: React.FC<Props> = (skills: Props): ReactElement => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalData, setModalData] = useState();
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [modalData, setModalData] = useState();
 
-    const toggleModal = (data: any) => {
-        setModalData(data);
-        if (isModalOpen === false) {
-            setIsModalOpen(!isModalOpen);
-        }
-    }
+    // const toggleModal = (data: any) => {
+    //     setModalData(data);
+    //     if (isModalOpen === false) {
+    //         setIsModalOpen(!isModalOpen);
+    //     }
+    // }
 
 
     return (
@@ -34,15 +34,11 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                         j'ai pu m'ouvrir à de nombreuses façons de programmer mais surtout de penser.
                     </p>
                 </div>
-
-                <Modal canShow={isModalOpen} updateModalState={toggleModal} data={modalData} />
-
                 <div className="skills-card-grid">
                     {skills.skills.map(skill => {
                         return (
                             <button
                                 className="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-blue-500/10"
-                                onClick={() => toggleModal(skill.description)}
                                 key={skill.enterprise}
                             >
                             <div className="w-10 h-10 text-blue-500">

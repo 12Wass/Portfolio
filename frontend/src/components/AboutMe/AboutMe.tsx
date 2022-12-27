@@ -1,7 +1,6 @@
 import React, {ReactElement} from 'react';
 import {Element} from "react-scroll";
 import Separator from "../Separator/Separator";
-import { motion } from "framer-motion";
 import "./AboutMe.css";
 
 const AboutMe: React.FC = (): ReactElement => {
@@ -23,9 +22,9 @@ const AboutMe: React.FC = (): ReactElement => {
                                 className="absolute inline-flex px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg shadow-xl -bottom-4 -right-4"
                             >
                                 <span className="inline-block bg-transparent rounded-lg">
-                                    <p className="ml-2 mr-2">
-                                        Voir mon CV
-                                    </p>
+                                    <a className="ml-2 mr-2" href="#here">
+                                        Télécharger mon CV
+                                    </a>
                                 </span>
                             </div>
                         </div>
