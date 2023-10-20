@@ -16,7 +16,8 @@ function App() {
                 context={
                     {
                         title: "Expérience professionnelle",
-                        description: "A travers mes différentes expériences professionnelles et mes projets personnels et scolaires, j'ai pu m'ouvrir à de nombreuses façons de progammer mais surtout de penser"
+                        description: "A travers mes différentes expériences professionnelles et mes projets personnels et scolaires, j'ai pu m'ouvrir à de nombreuses façons de progammer mais surtout de penser",
+                        category: "pro",
                     }
                 }
                 skills={[
@@ -41,7 +42,8 @@ function App() {
                 context={
                     {
                         title: "Parcours scolaire",
-                        description: "Alumni à l'ESGI, j'ai eu l'occasion de réaliser beaucoup de projets très intéressants dans le cadre de mes études mais également pendant mon temps libre"
+                        description: "Alumni à l'ESGI, j'ai eu l'occasion de réaliser beaucoup de projets très intéressants dans le cadre de mes études mais également pendant mon temps libre",
+                        category: "school"
                     }
                 }
                 skills={[

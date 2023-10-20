@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import {Link} from 'react-scroll';
+import {Link, Element} from 'react-scroll';
 
 interface Props {
     skills: {
@@ -10,12 +10,15 @@ interface Props {
     context?: {
         title: string,
         description: string,
+        category: string,
     };
 }
 
 const Skills: React.FC<Props> = (skills: Props): ReactElement => {
+    const skillsCount = skills.skills.length;
     return (
         <section className="text-white bg-gray-900 relative">
+            {skills.context?.category === "school" ? <Element name="school-things" /> : ""}
             <div className="skills-div-container">
                 <div className="max-w-lg mx-auto text-center">
                     <h2 className="text-3xl font-bold sm:text-4xl">{skills.context?.title}</h2>
@@ -24,7 +27,7 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                         {skills.context?.description}
                     </p>
                 </div>
-                <div className={`skills-card-grid lg:grid-cols-${skills.skills.length}`}>
+                <div className={`skills-card-grid lg:grid-cols-${skillsCount}`}>
                     {skills.skills.map(skill => {
                         return (
                             <button
@@ -63,6 +66,15 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                         )
                     })}
                 </div>
+                {skills.context?.category === "pro" ? 
+                <div className="div-banner-button-container">
+                    <Link to={'school-things'} smooth={true} duration={1000} activeClass="active">
+                        <button className="school-bouncing-button mt-10">
+                            D'accord, mais t'as un diplôme ?
+                        </button>
+                    </Link>
+                </div> 
+                : ""}
             </div>
         </section>
     );
