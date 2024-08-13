@@ -12,7 +12,7 @@ const AboutMe: React.FC = (): ReactElement => {
             <div className="relative">
               <div className="aspect-w-1 aspect-h-1">
                 <img
-                  src="https://media.licdn.com/dms/image/D4E03AQE0Z2YJIOPATg/profile-displayphoto-shrink_200_200/0/1674605711336?e=1710374400&v=beta&t=Xo1wDPeHzwiLZ5akh0QGIqj7Sv_tlOInE6XnPV8clIE"
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQE0Z2YJIOPATg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1674605711336?e=1729123200&v=beta&t=T26fVfeR1h4Y_cEi_f2izB59xsB3Gu9CdcQSIVCia_k"
                   alt=""
                   className="object-cover rounded-lg"
                 />

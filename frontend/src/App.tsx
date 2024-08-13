@@ -19,21 +19,33 @@ function App() {
         }}
         skills={[
           {
-            enterprise: "DGAC - SNA-RP",
+            company: "DGAC - SNA-RP",
             description:
               "Développement d'une application critique permettant de gérer le cycle de travail des contrôleurs aériens de toute la France et des Outre-mers",
             responsibility: "Fullstack Developer",
           },
           {
-            enterprise: "Finelia",
+            company: "Finelia",
             description:
               "Développement d'une application de Trade Finance permettant aux entreprises de gérer leurs transactions financières et leurs garanties via SWIFT",
             responsibility: "Fullstack Developer",
           },
           {
-            enterprise: "Teksial",
+            company: "Teksial",
             description:
               "Participation au développement de plusieurs applications internes de gestion de client dans le contexte des Certificats d'Économie d'Énergie",
+            responsibility: "Fullstack Developer",
+          },
+          {
+            company: "October",
+            description:
+              "Développement transverse sur plusieurs applications utilisées pour du prêt financier hors institution bancaires classiques, du simple dashboard à l'application exploitant une intelligence artificielle permettant de mesurer le risque encouru lors d'un prêt",
+            responsibility: "Fullstack Developer",
+          },
+          {
+            company: "See Tickets",
+            description:
+              "Développement d'un dashboard destiné aux 'Venues' utilisant nos systèmes permettant d'avoir une vue d'ensemble de tous leurs événements ayant eu lieu - Développement d'une application Box-Office destinée aux festivals et aux différents événements faisant de la vente de tickets",
             responsibility: "Fullstack Developer",
           },
         ]}
@@ -47,13 +59,13 @@ function App() {
         }}
         skills={[
           {
-            enterprise: "BonApp",
+            company: "BonApp",
             description:
               "Création d'une application de gestion de commande et de paiement dans un restaurant via QR Code avec un système complet de gestion d'équipes",
             responsibility: "CEO - Developer",
           },
           {
-            enterprise: "Rocket Launcher",
+            company: "Rocket Launcher",
             description:
               "Développement d'une application de mise en relation entre influenceurs et entreprises",
             responsibility: "Project Manager - Developer",

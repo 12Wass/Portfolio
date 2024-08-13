@@ -3,7 +3,7 @@ import { Link, Element } from "react-scroll";
 
 interface Props {
   skills: {
-    enterprise: string;
+    company: string;
     description: string;
     responsibility: string; // CHANGE THIS TO JSON OBJECT (IMAGES AND ALL OF THAT)
   }[];
@@ -36,7 +36,7 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
             return (
               <button
                 className="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-blue-500/10 hover:border-blue-500/10"
-                key={skill.enterprise}
+                key={skill.company}
               >
                 <div>
                   <span className="float-right pt-2 font-extralight">
@@ -62,7 +62,7 @@ const Skills: React.FC<Props> = (skills: Props): ReactElement => {
                 </div>
 
                 <h3 className="mt-4 text-xl font-bold text-white">
-                  {skill.enterprise}
+                  {skill.company}
                 </h3>
 
                 <p className="mt-1 text-sm text-gray-300">
