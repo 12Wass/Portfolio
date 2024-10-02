@@ -350,14 +350,20 @@ const ExpenseTracker = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-200 relative overflow-hidden">
-        {/* Background waves */}
-        <div className="absolute inset-0 z-0">
-          <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="rgba(129, 140, 248, 0.2)" fillOpacity="1" d="M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,181.3C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-          </svg>
-          <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="rgba(167, 139, 250, 0.2)" fillOpacity="1" d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,170.7C960,149,1056,107,1152,106.7C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-200">
+        {/* Animated wave background */}
+        <div className="wave-container absolute inset-0 z-0">
+          <svg className="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g className="parallax">
+              <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(129, 140, 248, 0.7)" />
+              <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(167, 139, 250, 0.5)" />
+              <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(199, 210, 254, 0.3)" />
+              <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgba(224, 231, 255, 0.1)" />
+            </g>
           </svg>
         </div>
         <div className="relative z-10 p-6 max-w-4xl mx-auto">
