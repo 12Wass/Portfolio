@@ -65,3 +65,15 @@ code {
     min-height: 40px;
   }
 }
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slide-down {
+  animation: slideDown 0.5s ease-out forwards;
+}

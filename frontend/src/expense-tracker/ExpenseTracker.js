@@ -38,6 +38,45 @@ const Button = ({ onClick, className, children }) => (
   </button>
 );
 
+const NotificationBanner = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem('hasDismissedBanner');
+    if (!dismissed) {
+      setIsVisible(true);
+    }
+  }, []);
+
+  const handleDismiss = () => {
+    localStorage.setItem('hasDismissedBanner', 'true');
+    setIsVisible(false);
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div
+      className="
+        fixed top-0 left-0 w-full bg-blue-600 text-white text-center
+        py-3 px-4 shadow-lg z-50 
+        transition-transform duration-500
+        animate-slide-down
+      "
+    >
+      <p>Je ne garde aucune données, tout est stocké localement dans votre navigateur. Bonnes économies !</p>
+      <button
+        onClick={handleDismiss}
+        className="bg-white text-blue-600 font-semibold px-4 py-2 rounded mt-2 hover:bg-gray-100 transition"
+      >
+        Got it
+      </button>
+    </div>
+  );
+
+};
+
+
 // Dashboard Component
 const Dashboard = ({ expenses, salary, categories }) => {
   const activeExpenses = expenses.filter(expense => 
@@ -354,7 +393,9 @@ const ExpenseTracker = () => {
 
   return (
       <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-200">
+        <NotificationBanner />
         {/* Animated wave background */}
+        
         <div className="wave-container absolute inset-0 z-0">
           <svg className="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
@@ -374,20 +415,41 @@ const ExpenseTracker = () => {
           <nav className="mb-4 sm:mb-8">
             <ul className="flex flex-wrap justify-center space-x-2 sm:space-x-6">
               <li className="mb-2 sm:mb-0">
-                <Link to="/" className="text-indigo-700 hover:text-indigo-900 font-semibold transition duration-300">Dashboard</Link>
+                <Link to="/expense-tracker" className="text-indigo-700 hover:text-indigo-900 font-semibold transition duration-300">Dashboard</Link>
               </li>
               <li className="mb-2 sm:mb-0">
-                <Link to="/expenses" className="text-indigo-700 hover:text-indigo-900 font-semibold transition duration-300">Manage Expenses</Link>
+                <Link to="expenses" className="text-indigo-700 hover:text-indigo-900 font-semibold transition duration-300">Manage Expenses</Link>
               </li>
               <li className="mb-2 sm:mb-0">
-                <Link to="/categories" className="text-indigo-700 hover:text-indigo-900 font-semibold transition duration-300">Manage Categories</Link>
+                <Link to="categories" className="text-indigo-700 hover:text-indigo-900 font-semibold transition duration-300">Manage Categories</Link>
               </li>
             </ul>
           </nav>
           <Routes>
-            <Route path="/" element={<Dashboard expenses={expenses} salary={salary} categories={categories} />} />
-            <Route path="/expenses" element={<ExpenseManagement expenses={expenses} setExpenses={setExpenses} categories={categories} salary={salary} setSalary={setSalary} />} />
-            <Route path="/categories" element={<CategoryManagement categories={categories} setCategories={setCategories} expenses={expenses} setExpenses={setExpenses} />} />
+          <Route index element={<Dashboard expenses={expenses} salary={salary} categories={categories} />} />
+          <Route
+            path="expenses"
+            element={
+              <ExpenseManagement
+                expenses={expenses}
+                setExpenses={setExpenses}
+                categories={categories}
+                salary={salary}
+                setSalary={setSalary}
+              />
+            }
+          />
+          <Route
+            path="categories"
+            element={
+              <CategoryManagement
+                categories={categories}
+                setCategories={setCategories}
+                expenses={expenses}
+                setExpenses={setExpenses}
+              />
+            }
+          />
         </Routes>
       </div>
     </div>

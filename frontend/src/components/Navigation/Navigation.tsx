@@ -27,8 +27,8 @@ const Navigation: React.FC = (): ReactElement => {
           </a>
         </li>
         <li>
-          <a className="px-3 py-2 rounded-lg" href="/perso-background">
-            Projets perso
+          <a className="px-3 py-2 rounded-lg" href="/expense-tracker">
+            Expense Tracker
           </a>
         </li>
         <li>

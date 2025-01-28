@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Portfolio /> },
-      { path: "expense-tracker", element: <ExpenseTracker /> },
+      { path: "/expense-tracker/*", element: <ExpenseTracker /> },
     ],
   },
 ]);
