@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { motion } from 'framer-motion';
 import { Trash2, Edit, Plus, Check } from 'react-feather';
@@ -353,7 +353,6 @@ const ExpenseTracker = () => {
   }, [expenses, salary, categories]);
 
   return (
-    <Router>
       <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-200">
         {/* Animated wave background */}
         <div className="wave-container absolute inset-0 z-0">
@@ -389,10 +388,9 @@ const ExpenseTracker = () => {
             <Route path="/" element={<Dashboard expenses={expenses} salary={salary} categories={categories} />} />
             <Route path="/expenses" element={<ExpenseManagement expenses={expenses} setExpenses={setExpenses} categories={categories} salary={salary} setSalary={setSalary} />} />
             <Route path="/categories" element={<CategoryManagement categories={categories} setCategories={setCategories} expenses={expenses} setExpenses={setExpenses} />} />
-          </Routes>
-        </div>
+        </Routes>
       </div>
-    </Router>
+    </div>
   );
 };
 
