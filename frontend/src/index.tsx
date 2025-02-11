@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Portfolio from "./components/Portfolio/Portfolio";
 import ExpenseTracker from "./expense-tracker/ExpenseTracker";
+import { Dashboard } from "./components/Dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Portfolio /> },
       { path: "/expense-tracker/*", element: <ExpenseTracker /> },
+      { path: "dashboard", element: <Dashboard /> },
     ],
   },
 ]);
