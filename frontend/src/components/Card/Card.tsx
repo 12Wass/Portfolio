@@ -41,6 +41,7 @@ export const CardHeader = ({
  */
 export const CardTitle = ({
   className = "",
+  children,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) => {
   return (
@@ -48,7 +49,9 @@ export const CardTitle = ({
       // Default styles for a card title:
       className={`text-lg font-semibold leading-none tracking-tight ${className}`}
       {...props}
-    />
+    >
+      {children}
+    </h3>
   );
 };
 

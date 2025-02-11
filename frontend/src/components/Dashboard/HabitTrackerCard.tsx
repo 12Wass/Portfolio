@@ -82,35 +82,37 @@ export function HabitTracker() {
 
         {/* Task List */}
         <ul className="space-y-2">
-          {habits.map((habit) => (
-            <li key={habit.id} className="flex items-center gap-2">
-              <button
-                className="focus:outline-none"
-                onClick={() => handleToggleHabit(habit.id)}
-              >
-                {habit.completed ? (
-                  <CheckSquare className="w-5 h-5 text-green-600" />
-                ) : (
-                  <Square className="w-5 h-5 text-gray-400" />
-                )}
-              </button>
-              <span
-                className={`text-sm ${
-                  habit.completed ? "line-through text-gray-400" : ""
-                }`}
-              >
-                {habit.text}
-              </span>
+          <AnimatePresence>
+            {habits.map((habit) => (
+              <motion.li key={habit.id} className="flex items-center gap-2">
+                <button
+                  className="focus:outline-none"
+                  onClick={() => handleToggleHabit(habit.id)}
+                >
+                  {habit.completed ? (
+                    <CheckSquare className="w-5 h-5 text-green-600" />
+                  ) : (
+                    <Square className="w-5 h-5 text-gray-400" />
+                  )}
+                </button>
+                <span
+                  className={`text-sm ${
+                    habit.completed ? "line-through text-gray-400" : ""
+                  }`}
+                >
+                  {habit.text}
+                </span>
 
-              <button
-                onClick={() => handleRemoveHabit(habit.id)}
-                className="text-gray-400 hover:text-red-600"
-                title="Delete task"
-              >
-                <Trash2 className="w-4 h-4" />
-              </button>
-            </li>
-          ))}
+                <button
+                  onClick={() => handleRemoveHabit(habit.id)}
+                  className="text-gray-400 hover:text-red-600"
+                  title="Delete task"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </motion.li>
+            ))}
+          </AnimatePresence>
         </ul>
       </CardContent>
     </Card>
