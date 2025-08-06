@@ -3,8 +3,8 @@ import { Bell } from "lucide-react";
 
 export function DashboardHeader() {
   return (
-    <header className="border-b p-4 bg-white flex items-center justify-between">
-      <h1 className="text-xl font-semibold">Welcome to Your Dashboard</h1>
+    <header className="bg-dark-cardBg text-dark-cardText p-4 border-b shadow-sm flex items-center justify-between">
+      <h1 className="text-2xl font-bold">Dashboard</h1>
       <div className="flex items-center gap-4">
         {/* Notification Icon (example) */}
         <button className="relative">

@@ -26,17 +26,20 @@ export function HabitTracker() {
 
   // Function to add a new habit to the list
   const handleAddHabit = () => {
-    if (newHabit.trim() === "") return;
-    const newId = habits.length ? habits[habits.length - 1].id + 1 : 1;
-    setHabits([...habits, { id: newId, text: newHabit, completed: false }]);
-    setNewHabit("");
+    if (newHabit.trim() !== "") {
+      setHabits([
+        ...habits,
+        { id: Date.now(), text: newHabit, completed: false },
+      ]);
+      setNewHabit("");
+    }
   };
 
   // Function to toggle a habit's completed status
   const handleToggleHabit = (id: number) => {
     setHabits(
-      habits.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
+      habits.map((habit) =>
+        habit.id === id ? { ...habit, completed: !habit.completed } : habit
       )
     );
   };
@@ -49,20 +52,20 @@ export function HabitTracker() {
   const completedCount = habits.filter((habit) => habit.completed).length;
 
   return (
-    <Card>
+    <Card className="bg-dark-cardBg text-dark-cardText">
       <CardHeader>
-        <CardTitle>Habit</CardTitle>
+        <CardTitle>Habit Tracker</CardTitle>
       </CardHeader>
 
       <CardContent>
-        <div className="mb-3 text-sm text-gray-500">
-          Completed {completedCount}/{habits.length} Habit
+        <div className="mb-4">
+          Completed {completedCount}/{habits.length} habits
         </div>
 
         {/* Input + Button to add a new task */}
         <div className="flex items-center gap-2 mb-4">
           <input
-            className="border p-2 flex-1 rounded text-sm"
+            className="bg-dark-inputBg text-dark-inputText border p-2 flex-1 rounded text-sm"
             type="text"
             placeholder="Add a new habit..."
             value={newHabit}
@@ -73,7 +76,7 @@ export function HabitTracker() {
           />
           <button
             onClick={handleAddHabit}
-            className="flex items-center gap-1 px-3 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700"
+            className="bg-dark-buttonBg text-dark-buttonText flex items-center gap-1 px-3 py-2 text-sm rounded hover:bg-blue-700"
           >
             <Plus className="w-4 h-4" />
             Add
@@ -84,31 +87,29 @@ export function HabitTracker() {
         <ul className="space-y-2">
           <AnimatePresence>
             {habits.map((habit) => (
-              <motion.li key={habit.id} className="flex items-center gap-2">
-                <button
-                  className="focus:outline-none"
-                  onClick={() => handleToggleHabit(habit.id)}
-                >
-                  {habit.completed ? (
-                    <CheckSquare className="w-5 h-5 text-green-600" />
-                  ) : (
-                    <Square className="w-5 h-5 text-gray-400" />
-                  )}
-                </button>
-                <span
-                  className={`text-sm ${
-                    habit.completed ? "line-through text-gray-400" : ""
-                  }`}
-                >
-                  {habit.text}
-                </span>
-
-                <button
-                  onClick={() => handleRemoveHabit(habit.id)}
-                  className="text-gray-400 hover:text-red-600"
-                  title="Delete task"
-                >
-                  <Trash2 className="w-4 h-4" />
+              <motion.li
+                key={habit.id}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.2 }}
+                layout
+                className="flex items-center justify-between p-2 bg-dark-cardBg border rounded"
+              >
+                <div className="flex items-center gap-2">
+                  <button onClick={() => handleToggleHabit(habit.id)}>
+                    {habit.completed ? (
+                      <CheckSquare className="w-4 h-4 text-green-500" />
+                    ) : (
+                      <Square className="w-4 h-4 text-gray-500" />
+                    )}
+                  </button>
+                  <span className={habit.completed ? "line-through" : ""}>
+                    {habit.text}
+                  </span>
+                </div>
+                <button onClick={() => handleRemoveHabit(habit.id)}>
+                  <Trash2 className="w-4 h-4 text-red-500" />
                 </button>
               </motion.li>
             ))}

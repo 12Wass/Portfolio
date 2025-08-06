@@ -1,10 +1,9 @@
-import React from "react";
 import { Home, User, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Sidebar() {
   return (
-    <aside className="w-64 bg-white border-r h-screen p-4 shadow-sm">
+    <aside className="w-64 bg-dark-sidebarBg text-dark-sidebarText border-r h-screen p-4 shadow-sm">
       <h2 className="text-lg font-bold mb-6">My Dashboard</h2>
 
       <nav className="flex flex-col gap-2">
