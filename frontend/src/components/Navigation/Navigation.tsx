@@ -32,6 +32,11 @@ const Navigation: React.FC = (): ReactElement => {
           </a>
         </li>
         <li>
+          <a className="px-3 py-2 rounded-lg" href="/workout-logger">
+            Workout Logger
+          </a>
+        </li>
+        <li>
           <a className="px-3 py-2 rounded-lg" href="/dashboard">
             Dashboard
           </a>
